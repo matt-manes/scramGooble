@@ -6,7 +6,7 @@ var cleared = false
 function scram () {
   var container = document.getElementById('credential_picker_container')
   var mobileContainer = document.getElementById('credential_picker_iframe')
-
+  console.log('checking for gooble...')
   if (container != null) {
     container.remove()
     cleared = true
@@ -17,6 +17,8 @@ function scram () {
     ++numChecks
   }
   if (numChecks >= maxChecks || cleared) {
+    if (cleared) console.log('yeeted gooble')
+    else console.log('no gooble')
     clearInterval(intervalId)
   }
 }
