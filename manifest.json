@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "scram, gooble",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Prevent the pop up that tries to get you to sign in with a google account.",
     "content_scripts": [
         {

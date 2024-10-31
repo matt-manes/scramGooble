@@ -4,16 +4,22 @@ var maxChecks = 100
 var numChecks = 0
 var cleared = false
 function scram () {
-  var container = document.getElementById('credential_picker_container')
-  var mobileContainer = document.getElementById('credential_picker_iframe')
+  var container_ids = [
+    'credential_picker_container',
+    'credential_picker_iframe',
+    'google-ebay'
+  ]
+  var container
   console.log('checking for gooble...')
-  if (container != null) {
+  for (let id in container_ids) {
+    container = document.getElementById(container_ids[id])
+    if (container == null) {
+      continue
+    }
     container.remove()
     cleared = true
-  } else if (mobileContainer != null) {
-    mobileContainer.remove()
-    cleared = true
-  } else {
+  }
+  if (!cleared) {
     ++numChecks
   }
   if (numChecks >= maxChecks || cleared) {
