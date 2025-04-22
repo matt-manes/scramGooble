@@ -1,8 +1,5 @@
-// Check for element for up to ~10s to account for slow page loads
 var intervalId = setInterval(scram, 100)
-var maxChecks = 100
-var numChecks = 0
-var cleared = false
+
 function scram () {
   var container_ids = [
     'credential_picker_container',
@@ -17,14 +14,6 @@ function scram () {
       continue
     }
     container.remove()
-    cleared = true
-  }
-  if (!cleared) {
-    ++numChecks
-  }
-  if (numChecks >= maxChecks || cleared) {
-    if (cleared) console.log('yeeted gooble')
-    else console.log('no gooble')
-    clearInterval(intervalId)
+    console.log('yeeted gooble')
   }
 }
