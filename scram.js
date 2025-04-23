@@ -1,4 +1,5 @@
 var intervalId = setInterval(scram, 100)
+var numChecks = 0
 
 function scram () {
   var container_ids = [
@@ -8,7 +9,9 @@ function scram () {
     'google-ebay'
   ]
   var container
-  console.log('checking for gooble...')
+  if (numChecks % 100 == 0) {
+    console.log('checking for gooble...')
+  }
   for (let id in container_ids) {
     container = document.getElementById(container_ids[id])
     if (container == null) {
@@ -17,4 +20,5 @@ function scram () {
     container.remove()
     console.log('yeeted gooble')
   }
+  numChecks++
 }
