@@ -4,6 +4,7 @@ function scram () {
   var container_ids = [
     'credential_picker_container',
     'credential_picker_iframe',
+    'google-one-tap-iframe',
     'google-ebay'
   ]
   var container
